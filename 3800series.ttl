@@ -1,6 +1,8 @@
 
 settitle 'Connected to <3800-48G>'
-
+/* specifically for J9576A
+    must edit tftp server and files appropriately
+*/
 waitln '0. Monitor ROM Console'
 sendln '0'
 sendln 'erase-all zeroize'
