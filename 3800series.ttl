@@ -1,0 +1,25 @@
+
+settitle 'Connected to <3800-48G>'
+
+waitln '0. Monitor ROM Console'
+sendln '0'
+sendln 'erase-all zeroize'
+sendln 'y'
+waitln 'Waiting for Speed Sense.  Press <Enter> twice to continue.'
+pause 1
+sendln ''
+pause 1
+sendln ''
+pause 3
+send 'a'
+pause 60
+sendln 'copy tftp fl 10.7.173.252 KA_16_04_0009.swi p'
+send 'y'
+wait '#'
+sendln 'copy tftp fl 10.7.173.252 KA_16_04_0009.swi s'
+send 'y'
+wait '#'
+sendln 'erase startup-config'
+send 'y'
+waitln 'Waiting for Speed Sense.  Press <Enter> twice to continue.'
+messagebox 'Switch update complete' 'Complete'

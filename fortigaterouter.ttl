@@ -1,0 +1,26 @@
+connect '/C=4'
+
+strVariable='passw'
+waitln ''
+waitln ''
+recvln
+
+passw = inputstr
+
+strtrim passw 'Serial number:'
+strinsert passw 1 'bcpb'
+wait 'login:'
+sendln 'maintainer'
+sendln passw
+wait '#'
+sendln 'exec factoryreset'
+sendln 'y'
+
+wait 'login:'
+sendln 'admin'
+sendln ''
+wait '#'
+bringupbox
+messagebox 'done' 'logged in as admin'
+closett
+end
